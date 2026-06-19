@@ -18,10 +18,8 @@ Before(async function () {
 After(async function ({pickle, result}) {
 
     if(result?.status == Status.FAILED) {
-    //Sreenshot if a scenario fails
     const img = await pageFixture.page.screenshot({ path: "test-results/" + pickle.name + ".png", type: "png" });
     await this.attach(img, "image/png");
-
     }
 
     await pageFixture.page.close();
