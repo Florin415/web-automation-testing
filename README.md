@@ -30,6 +30,11 @@ src/tests/
 └── steps/          # Step definitions
 ```
 
+## Reports
+
+- **HTML report** — generated as `cucumber-report.html` after each run, viewable in browser
+- **Screenshots** — captured automatically on test failure in `test-results/`
+
 ## Screenshots
 
 ![Login successful](assets/login-success.png)
@@ -37,8 +42,3 @@ src/tests/
 
 ![Cart with product](assets/cart-with-product.png)
 *Add to cart test*
-
-## Reports
-
-- HTML report: `cucumber-report.html`
-- Screenshots on failure: `test-results/`
