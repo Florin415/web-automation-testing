@@ -3,4 +3,3 @@ node_modules/
 dist/
 /test-results/
 cucumber-report.html
-.env

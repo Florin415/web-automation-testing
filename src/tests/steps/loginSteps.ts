@@ -1,9 +1,7 @@
 import {Given, When, Then} from "@cucumber/cucumber";
 import { expect} from "@playwright/test"
 import { pageFixture } from "../hooks/pageFixture";
-import * as dotenv from "dotenv";
-
-dotenv.config();
+import { credentials } from "../config/credentials";
 
 Given('User navigates to the application', async function () {
    await pageFixture.page.goto("https://automationexercise.com/");
@@ -27,17 +25,13 @@ Given('User enters the password as {string}', async function (password) {
 });
 
 Given('User enters valid credentials', async function () {
-    const email = process.env.LOGIN_EMAIL as string;
-    const password = process.env.LOGIN_PASSWORD as string;
-    await pageFixture.page.locator("input[data-qa='login-email']").fill(email);
-    await pageFixture.page.locator("input[data-qa='login-password']").fill(password);
+    await pageFixture.page.locator("input[data-qa='login-email']").fill(credentials.valid.email);
+    await pageFixture.page.locator("input[data-qa='login-password']").fill(credentials.valid.password);
 });
 
 Given('User enters invalid credentials', async function () {
-    const email = process.env.LOGIN_WRONG_EMAIL as string;
-    const password = process.env.LOGIN_WRONG_PASSWORD as string;
-    await pageFixture.page.locator("input[data-qa='login-email']").fill(email);
-    await pageFixture.page.locator("input[data-qa='login-password']").fill(password);
+    await pageFixture.page.locator("input[data-qa='login-email']").fill(credentials.invalid.email);
+    await pageFixture.page.locator("input[data-qa='login-password']").fill(credentials.invalid.password);
 });
 
 When('User clicks on the login button', async function () {
