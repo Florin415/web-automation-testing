@@ -1,4 +1,4 @@
-import {BeforeAll, AfterAll, Before, After, Status, AfterStep} from '@cucumber/cucumber';
+import {BeforeAll, AfterAll, Before, After, Status} from '@cucumber/cucumber';
 import { chromium, Browser, Page, BrowserContext } from '@playwright/test';
 import { pageFixture } from "./pageFixture";
 
