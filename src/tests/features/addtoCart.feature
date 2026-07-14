@@ -5,10 +5,8 @@ Feature: Add to cart test
         And User clicks on the consent button
         And User clicks on the login link
 
-    
-    Scenario Outline: Adding a product to the cart
-        And User enters the email as "florin415@yahoo.com"
-        And User enters the password as "Pass1122"
+    Scenario: Adding a product to the cart
+        Given User enters valid credentials
         And User clicks on the login button
         And User clicks on the view product button
         When User clicks on the add to cart button
